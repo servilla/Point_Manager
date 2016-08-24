@@ -37,7 +37,7 @@ class Sensor(object):
         self.Age = self.sensor.Age
         self.Status = self.sensor.Status
         self.Service = self.sensor.Service
-        self.Point = self.sensor.Point
+        self.Point = Point(self.sensor.Point)
 
     def get_id(self):
         return self.id
@@ -107,11 +107,13 @@ def main():
     pm = point_manager.CreateFromDocument(xml)
     print('Point Manager Attributes: {0}, {1}, {2}'.format(pm.id, pm.ts, pm.NoSensors))
     for sensor in pm.Sensor:
+
         s = Sensor(sensor)
-        p = Point(s.get_Point())
         print('Sensor {0}'.format(s.get_id()))
         print('     Sensor Attributes: {0}, {1}, {2}, {3}, {4}'.format(s.get_id(), s.get_type(), s.get_snid(), s.get_batt(), s.get_battlife()))
         print('     Sensor Data: {0}, {1}, {2}'.format(s.get_Age(), s.get_Status(), s.get_Service()))
+
+        p = s.get_Point()
         print('     Point Attributes: {0}, {1}, {2}, {3}, {4}'.format(p.get_id(), p.get_type(), p.get_dtype(), p.get_ptid(), p.get_index()))
         print('     Point Data: {0}\n'.format(p.get_Value()))
 
