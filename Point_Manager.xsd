@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="Point_Manager">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Sensor" minOccurs="1" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Age" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+                            <xs:element name="Status" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+                            <xs:element name="Service" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+                            <xs:element name="Point">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Value" type="xs:float"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="id" type="xs:integer" use="required"/>
+                                    <xs:attribute name="type" type="xs:string" use="required"/>
+                                    <xs:attribute name="dtype" type="xs:integer" use="required"/>
+                                    <xs:attribute name="ptid" type="xs:string" use="required"/>
+                                    <xs:attribute name="index" type="xs:integer" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="id" type="xs:integer" use="required"/>
+                        <xs:attribute name="type" type="xs:integer" use="required"/>
+                        <xs:attribute name="snid" type="xs:string" use="required"/>
+                        <xs:attribute name="batt" type="xs:integer" use="required"/>
+                        <xs:attribute name="battlife" type="xs:string" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:string" use="required"/>
+            <xs:attribute name="ts" type="xs:string" use="required"/>
+            <xs:attribute name="NoSensors" type="xs:integer" use="required"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

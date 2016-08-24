@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Point_Manager id="00:90:C2:EF:CB:01" ts="03/11/15 14:09:46" NoSensors="19">
+    <Sensor id="1" type="27" snid="00000000D81C05D4" batt="200" battlife="01/01/30">
+        <Age>10</Age>
+        <Status>0</Status>
+        <Service>0</Service>
+        <Point id="1" type="Analog" dtype="1" ptid="00000000D81C05D4_1" index="1">
+            <Value>-112.8</Value>
+        </Point>
+    </Sensor>
+    <Sensor id="2" type="27" snid="00000000EC1905D4" batt="200" battlife="01/01/30">
+        <Age>7</Age>
+        <Status>0</Status>
+        <Service>0</Service>
+        <Point id="2" type="Analog" dtype="1" ptid="00000000EC1905D4_1" index="1">
+            <Value>-114.9</Value>
+        </Point>
+    </Sensor>
+    <Sensor id="3" type="27" snid="00000000681E05D4" batt="200" battlife="01/01/30">
+        <Age>27</Age>
+        <Status>0</Status>
+        <Service>0</Service>
+        <Point id="3" type="Analog" dtype="1" ptid="00000000681E05D4_1" index="1">
+            <Value>-115.3</Value>
+        </Point>
+    </Sensor>
+    <Sensor id="4" type="27" snid="000000002C1D05D4" batt="200" battlife="01/01/30">
+        <Age>7</Age>
+        <Status>0</Status>
+        <Service>0</Service>
+        <Point id="4" type="Analog" dtype="1" ptid="000000002C1D05D4_1" index="1">
+            <Value>-113.1</Value>
+        </Point>
+    </Sensor>
+    <Sensor id="5" type="27" snid="00000000981B05D4" batt="200" battlife="01/01/30">
+        <Age>1</Age>
+        <Status>0</Status>
+        <Service>0</Service>
+        <Point id="5" type="Analog" dtype="1" ptid="00000000981B05D4_1" index="1">
+            <Value>-110.5</Value>
+        </Point>
+    </Sensor>
+    <Sensor id="6" type="27" snid="00000000741F05D4" batt="200" battlife="01/01/30">
+        <Age>10</Age>
+        <Status>0</Status>
+        <Service>0</Service>
+        <Point id="6" type="Analog" dtype="1" ptid="00000000741F05D4_1" index="1">
+            <Value>-110.9</Value>
+        </Point>
+    </Sensor>
+    <Sensor id="7" type="27" snid="00000000341905D4" batt="200" battlife="01/01/30">
+        <Age>3</Age>
+        <Status>0</Status>
+        <Service>0</Service>
+        <Point id="7" type="Analog" dtype="1" ptid="00000000341905D4_1" index="1">
+            <Value>-110.0</Value>
+        </Point>
+    </Sensor>
+    <Sensor id="8" type="27" snid="00000000481E05D4" batt="200" battlife="01/01/30">
+        <Age>5</Age>
+        <Status>0</Status>
+        <Service>0</Service>
+        <Point id="8" type="Analog" dtype="1" ptid="00000000481E05D4_1" index="1">
+            <Value>-111.2</Value>
+        </Point>
+    </Sensor>
+    <Sensor id="9" type="27" snid="00000000082005D4" batt="200" battlife="01/01/30">
+        <Age>4</Age>
+        <Status>0</Status>
+        <Service>0</Service>
+        <Point id="9" type="Analog" dtype="1" ptid="00000000082005D4_1" index="1">
+            <Value>-109.1</Value>
+        </Point>
+    </Sensor>
+    <Sensor id="10" type="27" snid="00000000802005D4" batt="200" battlife="01/01/30">
+        <Age>15</Age>
+        <Status>0</Status>
+        <Service>0</Service>
+        <Point id="10" type="Analog" dtype="1" ptid="00000000802005D4_1" index="1">
+            <Value>-114.9</Value>
+        </Point>
+    </Sensor>
+    <Sensor id="11" type="27" snid="000000001C1D05D4" batt="200" battlife="01/01/30">
+        <Age>7</Age>
+        <Status>0</Status>
+        <Service>0</Service>
+        <Point id="11" type="Analog" dtype="1" ptid="000000001C1D05D4_1" index="1">
+            <Value>-115.4</Value>
+        </Point>
+    </Sensor>
+    <Sensor id="12" type="27" snid="00000000641E05D4" batt="200" battlife="01/01/30">
+        <Age>1</Age>
+        <Status>0</Status>
+        <Service>0</Service>
+        <Point id="12" type="Analog" dtype="1" ptid="00000000641E05D4_1" index="1">
+            <Value>-107.9</Value>
+        </Point>
+    </Sensor>
+    <Sensor id="13" type="27" snid="00000000541E05D4" batt="200" battlife="01/01/30">
+        <Age>4</Age>
+        <Status>0</Status>
+        <Service>0</Service>
+        <Point id="13" type="Analog" dtype="1" ptid="00000000541E05D4_1" index="1">
+            <Value>-115.3</Value>
+        </Point>
+    </Sensor>
+    <Sensor id="14" type="27" snid="00000000601E05D4" batt="200" battlife="01/01/30">
+        <Age>1</Age>
+        <Status>0</Status>
+        <Service>0</Service>
+        <Point id="14" type="Analog" dtype="1" ptid="00000000601E05D4_1" index="1">
+            <Value>-116.0</Value>
+        </Point>
+    </Sensor>
+    <Sensor id="15" type="27" snid="000000001C1905D4" batt="200" battlife="01/01/30">
+        <Age>8</Age>
+        <Status>0</Status>
+        <Service>0</Service>
+        <Point id="15" type="Analog" dtype="1" ptid="000000001C1905D4_1" index="1">
+            <Value>-115.1</Value>
+        </Point>
+    </Sensor>
+    <Sensor id="16" type="27" snid="00000000B01B05D4" batt="200" battlife="01/01/30">
+        <Age>1</Age>
+        <Status>0</Status>
+        <Service>0</Service>
+        <Point id="16" type="Analog" dtype="1" ptid="00000000B01B05D4_1" index="1">
+            <Value>-105.9</Value>
+        </Point>
+    </Sensor>
+    <Sensor id="17" type="27" snid="00000000E81B05D4" batt="200" battlife="01/01/30">
+        <Age>6</Age>
+        <Status>0</Status>
+        <Service>0</Service>
+        <Point id="17" type="Analog" dtype="1" ptid="00000000E81B05D4_1" index="1">
+            <Value>-107.5</Value>
+        </Point>
+    </Sensor>
+    <Sensor id="18" type="27" snid="00000000E01C05D4" batt="200" battlife="01/01/30">
+        <Age>6</Age>
+        <Status>0</Status>
+        <Service>0</Service>
+        <Point id="18" type="Analog" dtype="1" ptid="00000000E01C05D4_1" index="1">
+            <Value>-21.9</Value>
+        </Point>
+    </Sensor>
+    <Sensor id="19" type="27" snid="00000000E81C05D4" batt="200" battlife="01/01/30">
+        <Age>4</Age>
+        <Status>0</Status>
+        <Service>0</Service>
+        <Point id="19" type="Analog" dtype="1" ptid="00000000E81C05D4_1" index="1">
+            <Value>24.2</Value>
+        </Point>
+    </Sensor>
+</Point_Manager>
