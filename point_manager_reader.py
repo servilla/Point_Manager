@@ -21,6 +21,8 @@ logger = logging.getLogger('point_manager_reader')
 
 import point_manager
 
+import requests
+
 class Sensor(object):
 
     def __init__(self, sensor=None):
@@ -80,7 +82,8 @@ class Point(object):
         self.index = self.point.index
 
         # Elements
-        self.Value = self.point.Value
+#covert value to Celsius
+        self.Value = (self.point.Value - 32) * 5.0/9.0
 
     def get_id(self):
         return self.id
@@ -103,7 +106,9 @@ class Point(object):
 
 def main():
 
-    xml = open('./data/pointManagerData.xml').read()
+#    xml = open('./data/pointManagerData.xml').read()
+    r = requests.get('http://10.153.147.94/xmldata')
+    xml = r.text
     pm = point_manager.CreateFromDocument(xml)
     print('Point Manager Attributes: {0}, {1}, {2}'.format(pm.id, pm.ts, pm.NoSensors))
     for sensor in pm.Sensor:
