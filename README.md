@@ -5,7 +5,7 @@ Python source to manage Point Manager data files.
 1. Create a local virtual environment
   - Python3: pyvenv venv
   - Python2: virtualenv venv
-2. . ./venv/bin/activate
+2. source ./venv/bin/activate
 3. pip install --upgrade pip setuptools
 4. pip install pyxb
 5. git clone https://github.com/servilla/Point_Manager.git
