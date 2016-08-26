@@ -13,4 +13,4 @@ Python source to manage Point Manager data files.
 7. python3 ./point_manager_reader.py
 
 ###Usage###
-**Usage**: `python ./point_manager_reader.py -h (help) | -f <filepath/filename> | -u <data URL>`
+`python ./point_manager_reader.py -h (help) | -f <filepath/filename> | -u <data URL>`
