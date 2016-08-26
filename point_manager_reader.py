@@ -12,16 +12,20 @@
     8/23/16
 """
 
+import requests
+import getopt
 import logging
+import sys
 
-logging.basicConfig(format='%(asctime)s %(levelname)s (%(name)s): %(message)s',
-                    datefmt='%Y-%m-%d% H:%M:%S%z')
-logging.getLogger('').setLevel(logging.WARN)
-logger = logging.getLogger('point_manager_reader')
 
 import point_manager
 
-import requests
+# Setup logging
+logging.basicConfig(format='%(asctime)s %(levelname)s (%(name)s): %(message)s',
+                    datefmt='%Y-%m-%d %H:%M:%S%z')
+logging.getLogger('').setLevel(logging.WARN)
+logger = logging.getLogger('point_manager_reader')
+
 
 class Sensor(object):
 
@@ -82,8 +86,7 @@ class Point(object):
         self.index = self.point.index
 
         # Elements
-#covert value to Celsius
-        self.Value = (self.point.Value - 32) * 5.0/9.0
+        self.Value = self.point.Value
 
     def get_id(self):
         return self.id
@@ -100,15 +103,59 @@ class Point(object):
     def get_index(self):
         return self.index
 
-    def get_Value(self):
+    def get_Value_as_F(self):
         return self.Value
 
+    def get_Value_as_C(self):
+        return (self.Value - 32) * 5.0/9.0
 
-def main():
 
-#    xml = open('./data/pointManagerData.xml').read()
-    r = requests.get('http://10.153.147.94/xmldata')
-    xml = r.text
+def main(argv):
+
+    usage = 'Usage: python ./point_manager_reader.py -h (help) | -f <filepath/filename> | -u <data URL>'
+
+    if len(argv) == 0:
+        logger.error(usage)
+        sys.exit(1)
+
+    try:
+        opts, args = getopt.getopt(argv, 'hf:u:')
+    except getopt.GetoptError as e:
+        logger.error('Unrecognized command line flag: {0}'.format(e))
+        sys.exit(1)
+
+    fn = None
+    url = None
+    for opt, arg in opts:
+        if opt == '-h':
+            print(usage)
+            sys.exit(0)
+        elif opt == '-f':
+            fn = arg
+        elif opt == '-u':
+            url = arg
+        else:
+            logger.error(usage)
+            sys.exit(1)
+
+    if fn and url:
+        logger.error(usage)
+        sys.exit(1)
+
+    if fn:
+        try:
+            xml = open(fn).read()
+        except IOError as e:
+            logger.error('Data file read error: {0}'.format(e))
+            sys.exit(1)
+    else:
+        try:
+            r = requests.get(url=url)
+            xml = r.text
+        except requests.RequestException as e:
+            logger.error('URL read error: {0}'.format(e))
+            sys.exit(1)
+
     pm = point_manager.CreateFromDocument(xml)
     print('Point Manager Attributes: {0}, {1}, {2}'.format(pm.id, pm.ts, pm.NoSensors))
     for sensor in pm.Sensor:
@@ -120,11 +167,11 @@ def main():
 
         p = s.get_Point()
         print('     Point Attributes: {0}, {1}, {2}, {3}, {4}'.format(p.get_id(), p.get_type(), p.get_dtype(), p.get_ptid(), p.get_index()))
-        print('     Point Data: {0}\n'.format(p.get_Value()))
+        print('     Point Data: {0}\n'.format(p.get_Value_as_C()))
 
     return 0
 
 
 if __name__ == "__main__":
-    main()
+    main(sys.argv[1:])
 
