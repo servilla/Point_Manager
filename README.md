@@ -11,3 +11,6 @@ Python source to manage Point Manager data files.
 5. git clone https://github.com/servilla/Point_Manager.git
 6. cd Point_Manager
 7. python3 ./point_manager_reader.py
+
+###Usage###
+**Usage**: `python ./point_manager_reader.py -h (help) | -f <filepath/filename> | -u <data URL>`
