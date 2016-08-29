@@ -14,11 +14,14 @@
 
 import requests
 import getopt
-import logging
 import sys
-
+from datetime import date
+from datetime import datetime
 
 import point_manager
+import point_manager_db
+
+import logging
 
 # Setup logging
 logging.basicConfig(format='%(asctime)s %(levelname)s (%(name)s): %(message)s',
@@ -28,7 +31,6 @@ logger = logging.getLogger('point_manager_reader')
 
 
 class Sensor(object):
-
     def __init__(self, sensor=None):
         self.sensor = sensor
 
@@ -58,7 +60,9 @@ class Sensor(object):
         return self.batt
 
     def get_battlife(self):
-        return self.battlife
+        d = self.battlife.split('/')
+        battlife = date(int(d[2]) + 2000, int(d[0]), int(d[1]))
+        return battlife
 
     def get_Age(self):
         return self.Age
@@ -74,7 +78,6 @@ class Sensor(object):
 
 
 class Point(object):
-
     def __init__(self, point=None):
         self.point = point
 
@@ -107,11 +110,10 @@ class Point(object):
         return self.Value
 
     def get_Value_as_C(self):
-        return (self.Value - 32) * 5.0/9.0
+        return (self.Value - 32) * 5.0 / 9.0
 
 
 def main(argv):
-
     usage = 'Usage: python ./point_manager_reader.py -h (help) | -f <filepath/filename> | -u <data URL>'
 
     if len(argv) == 0:
@@ -157,21 +159,39 @@ def main(argv):
             sys.exit(1)
 
     pm = point_manager.CreateFromDocument(xml)
-    print('Point Manager Attributes: {0}, {1}, {2}'.format(pm.id, pm.ts, pm.NoSensors))
+    print('Point Manager Attributes: {0}, {1}, {2}'.format(pm.id, pm.ts,
+                                                           pm.NoSensors))
+    session = point_manager_db.connect_sensor_db()
     for sensor in pm.Sensor:
-
         s = Sensor(sensor)
         print('Sensor {0}'.format(s.get_id()))
-        print('     Sensor Attributes: {0}, {1}, {2}, {3}, {4}'.format(s.get_id(), s.get_type(), s.get_snid(), s.get_batt(), s.get_battlife()))
-        print('     Sensor Data: {0}, {1}, {2}'.format(s.get_Age(), s.get_Status(), s.get_Service()))
+        print('     Sensor Attributes: {0}, {1}, {2}, {3}, {4}'.format(
+            s.get_id(), s.get_type(), s.get_snid(), s.get_batt(),
+            s.get_battlife()))
+        print('     Sensor Data: {0}, {1}, {2}'.format(s.get_Age(),
+                                                       s.get_Status(),
+                                                       s.get_Service()))
 
         p = s.get_Point()
-        print('     Point Attributes: {0}, {1}, {2}, {3}, {4}'.format(p.get_id(), p.get_type(), p.get_dtype(), p.get_ptid(), p.get_index()))
+        print(
+            '     Point Attributes: {0}, {1}, {2}, {3}, {4}'.format(p.get_id(),
+                                                                    p.get_type(),
+                                                                    p.get_dtype(),
+                                                                    p.get_ptid(),
+                                                                    p.get_index()))
         print('     Point Data: {0}\n'.format(p.get_Value_as_C()))
+
+        ts = pm.ts.split(' ')
+        d = ts[0].split('/')
+        t = ts[1].split(':')
+        pm_ts = datetime(int(d[2]) + 2000, int(d[0]), int(d[1]), int(t[0]),
+                         int(t[1]), int(t[2]))
+
+        point_manager_db.add_sensor(pm_id=pm.id, pm_ts=pm_ts, s=s,
+                                    session=session)
 
     return 0
 
 
 if __name__ == "__main__":
     main(sys.argv[1:])
-
