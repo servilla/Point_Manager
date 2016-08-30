@@ -59,9 +59,11 @@ class Sensor(object):
     def get_batt(self):
         return self.batt
 
-    def get_battlife(self):
-        d = self.battlife.split('/')
-        battlife = date(int(d[2]) + 2000, int(d[0]), int(d[1]))
+    def get_battlife(self, as_date=False):
+        battlife = self.battlife
+        if as_date:
+            d = self.battlife.split('/')
+            battlife = date(int(d[2]) + 2000, int(d[0]), int(d[1]))
         return battlife
 
     def get_Age(self):
@@ -106,15 +108,16 @@ class Point(object):
     def get_index(self):
         return self.index
 
-    def get_Value_as_F(self):
-        return self.Value
-
-    def get_Value_as_C(self):
-        return (self.Value - 32) * 5.0 / 9.0
+    def get_Value(self, as_celsius=False):
+        value = self.Value
+        if as_celsius:
+            value = (self.Value - 32) * 5.0 / 9.0
+        return value
 
 
 def main(argv):
-    usage = 'Usage: python ./point_manager_reader.py -h (help) | -f <filepath/filename> | -u <data URL>'
+    usage = 'Usage: python ./point_manager_reader.py -h (help) | ' +\
+            '-f <filepath/filename> | -u <data URL>'
 
     if len(argv) == 0:
         logger.error(usage)
@@ -158,6 +161,7 @@ def main(argv):
             logger.error('URL read error: {0}'.format(e))
             sys.exit(1)
 
+    now = datetime.now()
     pm = point_manager.CreateFromDocument(xml)
     print('Point Manager Attributes: {0}, {1}, {2}'.format(pm.id, pm.ts,
                                                            pm.NoSensors))
@@ -167,7 +171,7 @@ def main(argv):
         print('Sensor {0}'.format(s.get_id()))
         print('     Sensor Attributes: {0}, {1}, {2}, {3}, {4}'.format(
             s.get_id(), s.get_type(), s.get_snid(), s.get_batt(),
-            s.get_battlife()))
+            s.get_battlife(as_date=True)))
         print('     Sensor Data: {0}, {1}, {2}'.format(s.get_Age(),
                                                        s.get_Status(),
                                                        s.get_Service()))
@@ -179,16 +183,12 @@ def main(argv):
                                                                     p.get_dtype(),
                                                                     p.get_ptid(),
                                                                     p.get_index()))
-        print('     Point Data: {0}\n'.format(p.get_Value_as_C()))
+        print('     Point Data: {0}\n'.format(p.get_Value(as_celsius=True)))
 
-        ts = pm.ts.split(' ')
-        d = ts[0].split('/')
-        t = ts[1].split(':')
-        pm_ts = datetime(int(d[2]) + 2000, int(d[0]), int(d[1]), int(t[0]),
-                         int(t[1]), int(t[2]))
-
-        point_manager_db.add_sensor(pm_id=pm.id, pm_ts=pm_ts, s=s,
-                                    session=session)
+        point_manager_db.add_sensor_raw(ts=now, pm_id=pm.id, pm_ts=pm.ts,
+                                        sensor=s, session=session)
+        point_manager_db.add_sensor_cooked(ts=now, pm_id=pm.id, sensor=s,
+                                           session=session)
 
     return 0
 
