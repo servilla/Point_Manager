@@ -184,7 +184,186 @@ def main(argv):
                                                                     p.get_ptid(),
                                                                     p.get_index()))
         print('     Point Data: {0}\n'.format(p.get_Value(as_celsius=True)))
-
+        if s.get_snid()=='00000000D81C05D4': 
+#             if p.get_Value(as_celsius=True) > -75.00:
+#                print('1-DGR: {0:.2f} {1} is in alarm'.format(p.get_Value(as_celsius=True),s.get_Age()))
+#             else:
+                print('1-DGR: {0:.2f} {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
+        if s.get_snid()=='00000000EC1905D4': 
+#             if p.get_Value(as_celsius=True) > -60.00:
+#                print('2-DGR: {0:.2f} {1} is in alarm'.format(p.get_Value(as_celsius=True),s.get_Age()))
+#             else:
+                print('2-DGR-BK: {0:.2f} {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
+        if s.get_snid()=='00000000681E05D4': 
+             if p.get_Value(as_celsius=True) > -75.00:
+                print('3-DGR: {0:.2f} {1} is in alarm'.format(p.get_Value(as_celsius=True),s.get_Age()))
+             else:
+                print('3-DGR: {0:.2f} {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
+        if s.get_snid()=='000000002C1D05D4': 
+             if p.get_Value(as_celsius=True) > -75.00:
+                print('4-DGR: {0:.2f} {1} is in alarm'.format(p.get_Value(as_celsius=True),s.get_Age()))
+             else:
+                print('4-DGR: {0:.2f} {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
+        if s.get_snid()=='00000000981B05D4': 
+             if p.get_Value(as_celsius=True) > -75.00:
+                print('5-DGR: {0:.2f} {1} is in alarm'.format(p.get_Value(as_celsius=True),s.get_Age()))
+             else:
+                print('5-DGR: {0:.2f} {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
+        if s.get_snid()=='00000000741F05D4': 
+             if p.get_Value(as_celsius=True) > -75.00:
+                print('18-DGR: {0:.2f} {1} is in maintenance'.format(p.get_Value(as_celsius=True),s.get_Age()))
+             else:
+                print('18-DGR: {0:.2f} {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
+        if s.get_snid()=='00000000341905D4': 
+#             if p.get_Value(as_celsius=True) > -75.00:
+#                print('7-DGR: {0:.2f} {1} is in alarm'.format(p.get_Value(as_celsius=True),s.get_Age()))
+#             else:
+                print('7-DGR: {0:.2f} {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
+        if s.get_snid()=='00000000481E05D4': 
+             if p.get_Value(as_celsius=True) > -75.00:
+                print('8-DGR: {0:.2f} {1} is in alarm'.format(p.get_Value(as_celsius=True),s.get_Age()))
+             else:
+                print('8-DGR: {0:.2f} {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
+        if s.get_snid()=='00000000082005D4': 
+             if p.get_Value(as_celsius=True) > -75.00:
+                print('9-DGR: {0:.2f} {1} is in alarm'.format(p.get_Value(as_celsius=True),s.get_Age()))
+             else:
+                print('9-DGR: {0:.2f} {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
+        if s.get_snid()=='00000000802005D4': 
+             if p.get_Value(as_celsius=True) > -75.00:
+                print('10-DGR: {0:.2f} {1} is in alarm'.format(p.get_Value(as_celsius=True),s.get_Age()))
+             else:
+                print('10-DGR: {0:.2f} {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
+        if s.get_snid()=='000000001C1D05D4': 
+             if p.get_Value(as_celsius=True) > -75.00:
+                print('11-DGR: {0:.2f} {1} is in alarm'.format(p.get_Value(as_celsius=True),s.get_Age()))
+             else:
+                print('11-DGR: {0:.2f} {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
+        if s.get_snid()=='00000000641E05D4': 
+             if p.get_Value(as_celsius=True) > -75.00:
+                print('12-DGR: {0:.2f} {1} is in alarm'.format(p.get_Value(as_celsius=True),s.get_Age()))
+             else:
+                print('12-DGR: {0:.2f} {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
+        if s.get_snid()=='00000000541E05D4': 
+             if p.get_Value(as_celsius=True) > -75.00:
+                print('13-DGR: {0:.2f} {1} is in alarm'.format(p.get_Value(as_celsius=True),s.get_Age()))
+             else:
+                print('13-DGR: {0:.2f} {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
+        if s.get_snid()=='00000000601E05D4': 
+             if p.get_Value(as_celsius=True) > -65.00:
+                print('14-DGR: {0:.2f} {1} is in alarm'.format(p.get_Value(as_celsius=True),s.get_Age()))
+             else:
+                print('14-DGR: {0:.2f} {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
+        if s.get_snid()=='000000001C1905D4': 
+             if p.get_Value(as_celsius=True) > -75.00:
+                print('15-DGR: {0:.2f} {1} is in alarm'.format(p.get_Value(as_celsius=True),s.get_Age()))
+             else:
+                print('15-DGR: {0:.2f} {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
+        if s.get_snid()=='00000000B01B05D4': 
+             if p.get_Value(as_celsius=True) > -75.00:
+                print('16-DGR: {0:.2f} {1} is in alarm'.format(p.get_Value(as_celsius=True),s.get_Age()))
+             else:
+                print('16-DGR: {0:.2f} {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
+        if s.get_snid()=='00000000E81B05D4': 
+             if p.get_Value(as_celsius=True) > -75.00:
+                print('17-DGR: {0:.2f} {1} is in alarm'.format(p.get_Value(as_celsius=True),s.get_Age()))
+             else:
+                print('17-DGR: {0:.2f} {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
+        if s.get_snid()=='000000000C1905D4': 
+#             if p.get_Value(as_celsius=True) > -15.00:
+#                print('1-DP MSB: {0:.2f} {1} is in alarm'.format(p.get_Value(as_celsius=True),s.get_Age()))
+#             else:
+                print('1-DP: {0:.2f} {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
+        if s.get_snid()=='00000000E81C05D4': 
+#             if p.get_Value(as_celsius=True) > -75.00:
+#                print('2-DP MSB: {0:.2f} {1} is in alarm'.format(p.get_Value(as_celsius=True),s.get_Age()))
+#             else:
+                print('2-DP: {0:.2f} {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
+        if s.get_snid()=='00000000D41C05D4': 
+#             if p.get_Value(as_celsius=True) > -75.00:
+#                print('1-IPM MSB: {0:.2f} {1} is in alarm'.format(p.get_Value(as_celsius=True),s.get_Age()))
+#             else:
+                print('1-IPM: {0:.2f} {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
+        if s.get_snid()=='000000000C1E05D4': 
+#             if p.get_Value(as_celsius=True) > -10.00:
+#                print('2-IPM: {0:.2f} {1} is in alarm'.format(p.get_Value(as_celsius=True),s.get_Age()))
+#             else:
+                print('2-IPM: {0:.2f} {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
+        if s.get_snid()=='00000000B01D05D4': 
+#             if p.get_Value(as_celsius=True) > -10.00:
+#                print('3-IPM: {0:.2f} {1} is in alarm'.format(p.get_Value(as_celsius=True),s.get_Age()))
+#             else:
+                print('3-IPM: {0:.2f} {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
+        if s.get_snid()=='00000000241905D4': 
+             if p.get_Value(as_celsius=True) > -10.00:
+                print('4-IPM: {0:.2f} {1} is in alarm'.format(p.get_Value(as_celsius=True),s.get_Age()))
+             else:
+                print('4-IPM: {0:.2f} {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
+        if s.get_snid()=='00000000E41C05D4': 
+             if p.get_Value(as_celsius=True) > -10.00:
+                print('5-IPM: {0:.2f} {1} is in alarm'.format(p.get_Value(as_celsius=True),s.get_Age()))
+             else:
+                print('5-IPM: {0:.2f} {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
+        if s.get_snid()=='00000000E01C05D4': 
+             if p.get_Value(as_celsius=True) > -10.00:
+                print('6-IPM: {0:.2f} {1} is in alarm'.format(p.get_Value(as_celsius=True),s.get_Age()))
+             else:
+                print('6-IPM: {0:.2f} {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
+        if s.get_snid()=='00000000F41C05D4': 
+#             if p.get_Value(as_celsius=True) > -75.00:
+#                print('7-IPM: {0:.2f} {1} is in alarm'.format(p.get_Value(as_celsius=True),s.get_Age()))
+#             else:
+                print('7-IPM: {0:.2f} {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
+        if s.get_snid()=='00000000A01B05D4': 
+             if p.get_Value(as_celsius=True) > -10.00:
+                print('8-IPM: {0:.2f} {1} is in alarm'.format(p.get_Value(as_celsius=True),s.get_Age()))
+             else:
+                print('8-IPM: {0:.2f} {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
+        if s.get_snid()=='00000000CC1C05D4': 
+#             if p.get_Value(as_celsius=True) > -75.00:
+#                print('BURN MSB: {0:.2f} {1} is in alarm'.format(p.get_Value(as_celsius=True),s.get_Age()))
+#             else:
+                print('BURN MSB: {0:.2f} {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
+        if s.get_snid()=='000000006C1F05D4': 
+             if p.get_Value(as_celsius=True) > -10.00:
+                print('DOCK MSB: {0:.2f} {1} is in alarm'.format(p.get_Value(as_celsius=True),s.get_Age()))
+             else:
+                print('DOCK MSB: {0:.2f} {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
+        if s.get_snid()=='00000000581E05D4': 
+#             if p.get_Value(as_celsius=True) > -10.00:
+#                print('1-FISH: {0:.2f} {1} is in alarm'.format(p.get_Value(as_celsius=True),s.get_Age()))
+#             else:
+                print('1-FISH: {0:.2f}  {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
+        if s.get_snid()=='00000000F81805D4': 
+             if p.get_Value(as_celsius=True) > -10.00:
+                print('2-FISH: {0:.2f} {1} is in alarm'.format(p.get_Value(as_celsius=True),s.get_Age()))
+             else:
+                print('2-FISH: {0:.2f} {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
+        if s.get_snid()=='00000000DC1B05D4': 
+             if p.get_Value(as_celsius=True) > -60.00:
+                print('3-FISH: {0:.2f} {1} is in alarm'.format(p.get_Value(as_celsius=True),s.get_Age()))
+             else:
+                print('3-FISH: {0:.2f} {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
+        if s.get_snid()=='00000000CF5105D4': 
+#             if p.get_Value(as_celsius=True) > -70.00:
+#                print('4-FISH: {0:.2f} {1} is in alarm'.format(p.get_Value(as_celsius=True),s.get_Age()))
+#             else:
+                print('4-FISH: {0:.2f} {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
+        if s.get_snid()=='000000000C1D05D4': 
+             if p.get_Value(as_celsius=True) > -10.00:
+                print('1-PARA: {0:.2f} {1} is in alarm'.format(p.get_Value(as_celsius=True),s.get_Age()))
+             else:
+                print('1-PARA: {0:.2f} {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
+        if s.get_snid()=='000000007C1D05D4': 
+ #            if p.get_Value(as_celsius=True) > -10.00:
+#                print('2-PARA: {0:.2f} {1} is in alarm'.format(p.get_Value(as_celsius=True),s.get_Age()))
+#             else:
+                print('2-PARA: {0:.2f} {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
+        if s.get_snid()=='00000000441E05D4': 
+             if p.get_Value(as_celsius=True) > -10.00:
+                print('AWET MSB: {0:.2f} {1} is in alarm'.format(p.get_Value(as_celsius=True),s.get_Age()))
+             else:
+                print('AWET MSB: {0:.2f} {1}'.format(p.get_Value(as_celsius=True),s.get_Age()))
         point_manager_db.add_sensor_raw(ts=now, pm_id=pm.id, pm_ts=pm.ts,
                                         sensor=s, session=session)
         point_manager_db.add_sensor_cooked(ts=now, pm_id=pm.id, sensor=s,
